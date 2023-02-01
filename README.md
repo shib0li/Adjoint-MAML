@@ -4,22 +4,23 @@ by [Shibo Li](https://imshibo.com), Wang Zheng, [Mike Kirby](https://www.cs.utah
 
 <p align="center">
     <br>
-    <img src="images/ifc-illustrate.png" width="800" />
+    <img src="images/amaml-idea-trim.png" width="800" />
     <br>
 <p>
 
 <h4 align="center">
     <p>
-        <a href="https://openreview.net/forum?id=dUYLikScE-">Paper</a> |
-        <a href="https://github.com/shib0li/Infinite-Fidelity-Coregionalization/blob/main/images/slides.pdf">Slides</a> |
-        <a href="https://github.com/shib0li/Infinite-Fidelity-Coregionalization/blob/main/images/poster.pdf">Poster</a> 
+        <a href="https://arxiv.org/abs/2110.08432">Paper</a> |
+<!--         <a href="https://github.com/shib0li/Infinite-Fidelity-Coregionalization/blob/main/images/slides.pdf">Slides</a> | -->
+<!--         <a href="https://github.com/shib0li/Infinite-Fidelity-Coregionalization/blob/main/images/poster.pdf">Poster</a>  -->
     <p>
 </h4>
 
 
-Multi-fidelity modeling and learning is important in physical simulation related applications. It can leverage both low-fidelity and high-fidelity examples for training so as to reduce the cost of data generation yet still achieving good performance. While existing approaches only model finite, discrete fidelities, in practice, the feasible fidelity choice is often infinite, which can correspond to a continuous mesh spacing or finite element length.   In this paper, we propose Infinite Fidelity Coregionalization (IFC). Given the data, our method can extract and exploit rich information within infinite, continuous fidelities to bolster the prediction accuracy. Our model can interpolate and/or extrapolate the predictions to novel fidelities that are not covered by the training data. Specifically, we introduce a low-dimensional latent output as a continuous function of the fidelity and input, and multiple it with a basis matrix to predict high-dimensional solution outputs. We model the latent output as a neural Ordinary Differential Equation (ODE) to capture the complex relationships within and integrate information throughout the continuous fidelities.  We then use Gaussian processes or another ODE to estimate the fidelity-varying bases. For efficient inference, we reorganize the bases as a tensor, and use a tensor-Gaussian variational posterior approximation to develop a scalable inference algorithm for massive outputs. We show the advantage of our method in several benchmark tasks in computational physics. 
+Model Agnostic Meta Learning (MAML) is widely used to find a good initialization for a family of tasks. Despite its success, a critical challenge in MAML is to calculate the gradient w.r.t. the initialization of a long training trajectory for the sampled tasks, because the computation graph can rapidly explode and the computational cost is very expensive. 
 
-<!-- IFC-ODE $^2$ /GPT -->
+To address this problem, we propose Adjoint MAML (A-MAML). We view gradient descent in the inner optimization as the evolution of an Ordinary Differential Equation (ODE). To efficiently compute the gradient of the validation loss w.r.t. the initialization, we use the adjoint method to construct a companion, backward ODE. To obtain the gradient w.r.t. the initialization, we only need to run the standard ODE solver twice --- one is forward in time that evolves a long trajectory of gradient flow for the sampled task; the other is backward and solves the adjoint ODE. We need not create or expand any intermediate computational graphs, adopt aggressive approximations, or impose proximal regularizers in the training loss.  Our approach is cheap, accurate, and adaptable to different trajectory lengths. We demonstrate  the advantage of our approach in both synthetic and real-world meta-learning tasks. 
+
 
 # System Requirements
 
@@ -64,27 +65,6 @@ bash test-GPT.sh $DOMAIN $RANK $EPOCHS $DEVICE $FOLD $INTERVAL
 * `$FOLD` fold index of dataset
 * `$INTERVAL` frequency for saving the results
 * `$DEPTH_A` (for *IFC-ODE* $^2$ only) depth of basis neural ODE
-
-# Example
-
-You can fast test on *Heat* equation by run
-```
-bash test-ODE.sh/test-GPT.sh Heat 5 500 cuda:0 0 10
-```
-for 500 epochs, the training and testing errors are ploted
-
-<p align="center">
-    <br>
-    <img src="images/rmse_heat_InfFidGPT.png" width="300" />
-    <br>
-<p>
-    
-<p align="center">
-    <br>
-    <img src="images/rmse_heat_InfFidODE.png" width="300" />
-    <br>
-<p>
-
 
 
 
