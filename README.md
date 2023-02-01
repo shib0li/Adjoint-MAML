@@ -29,30 +29,22 @@ We highly recommend to use Docker to run our code. We have attached the docker b
 
 # Run
 
-To run *IFC-ODE* $^2$
+To run 
 ```
-bash test-ODE.sh $DOMAIN $RANK $EPOCHS $DEVICE $FOLD $INTERVAL $DEPTH_A
-
-```
-To run *IFC-GPT*
-```
-bash test-GPT.sh $DOMAIN $RANK $EPOCHS $DEVICE $FOLD $INTERVAL 
+bash experiment.sh $DOMAIN $k_SHOT $ $k_QUERY $INNER_STEPS $DEIVCE 
 
 ```
 
-* `$DOMAIN` name of physical problesm: *Heat*, *Poisson*, *Burgers*, *TopOpt*, *NavierStockPRec*(3D problem)
-* `$RANK` dimension of latent ODE
-* `$EPOCHS` maximum epochs 
+* `$DOMAIN` name of problem
+* `$k_SHOT` number of shots
+* `$k_QUERY` number of support
+* `$INNER_STEPS` SGD steps in the inner loop
 * `$DEVICE` where to run, for example ***cuda:0*** or ***cpu***
-* `$FOLD` fold index of dataset
-* `$INTERVAL` frequency for saving the results
-* `$DEPTH_A` (for *IFC-ODE* $^2$ only) depth of basis neural ODE
-
 
 
 # License
 
-IFC is released under the MIT License, please refer the LICENSE for details
+Adjoint MAML is released under the MIT License, please refer the LICENSE for details
 
 # Getting Involved
 Feel free to submit Github issues or pull requests. Welcome to contribute to our project!
@@ -66,14 +58,11 @@ Please cite our paper if you find it helpful :)
 
 ```
 
-@inproceedings{
-li2022infinitefidelity,
-title={Infinite-Fidelity Coregionalization  for Physical Simulation},
-author={Shibo Li and Zheng Wang and Robert Kirby and Shandian Zhe},
-booktitle={Advances in Neural Information Processing Systems},
-editor={Alice H. Oh and Alekh Agarwal and Danielle Belgrave and Kyunghyun Cho},
-year={2022},
-url={https://openreview.net/forum?id=dUYLikScE-}
+@article{li2021meta,
+  title={Meta-Learning with Adjoint Methods},
+  author={Li, Shibo and Wang, Zheng and Narayan, Akil and Kirby, Robert and Zhe, Shandian},
+  journal={arXiv preprint arXiv:2110.08432},
+  year={2021}
 }
 
 ```
