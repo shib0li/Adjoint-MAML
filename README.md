@@ -26,24 +26,6 @@ To address this problem, we propose Adjoint MAML (A-MAML). We view gradient desc
 
 We highly recommend to use Docker to run our code. We have attached the docker build file `env.Dockerfile`. Or feel free to install the packages with pip/conda that could be found in the docker file.
 
-# Datasets
-
-*Heat* equation data is included in this repository. You can generate other physical simulations datasets by yourself by running
-
-```
-python generate.py -domain=(Heat, Poisson, Burgers, TopOpt, NavierStockPRec/URec/VRec)
-
-```
-For *Buergers*, *Topology Optimization*, *NavierStock*, the solvers requires MATLAB support. The generated multi-fidelity data will saved in to `data/__raw__` folder
-
-
-```
-data/
-├── __raw__/
-│   └── Heat_8_128/
-│       └──...
-├── matlab_solvers
-```
 
 # Run
 
