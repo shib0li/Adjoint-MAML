@@ -30,10 +30,8 @@ We highly recommend to use Docker to run our code. We have attached the docker b
 # Run
 
 To run 
-```
-bash experiment.sh $DOMAIN $k_SHOT $ $k_QUERY $INNER_STEPS $DEIVCE 
 
-```
+```bash experiment.sh $DOMAIN $k_SHOT $ $k_QUERY $INNER_STEPS $DEIVCE ```
 
 * `$DOMAIN` name of problem
 * `$k_SHOT` number of shots
