@@ -11,7 +11,7 @@ by [Shibo Li](https://imshibo.com), Wang Zheng, [Akil Narayan](http://www.sci.ut
 <h4 align="center">
     <p>
         <a href="https://arxiv.org/abs/2110.08432">Paper</a> |
-        <a href="https://github.com/shib0li/Infinite-Fidelity-Coregionalization/blob/main/images/amaml-slides.pdf">Slides</a> 
+        <a href="https://github.com/shib0li/Adjoint-MAML/blob/main/images/amaml-slides.pdf">Slides</a> 
 <!--         <a href="https://github.com/shib0li/Infinite-Fidelity-Coregionalization/blob/main/images/poster.pdf">Poster</a>  -->
     <p>
 </h4>
