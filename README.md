@@ -63,14 +63,5 @@ To contact us, never hestitate to send an email to `shibo@cs.utah.edu` or `shibo
 # Citation
 Please cite our paper if you find it helpful :)
 
-```
 
-@article{li2021meta,
-  title={Meta-Learning with Adjoint Methods},
-  author={Li, Shibo and Wang, Zheng and Narayan, Akil and Kirby, Robert and Zhe, Shandian},
-  journal={arXiv preprint arXiv:2110.08432},
-  year={2021}
-}
-
-```
 <br></br>
