@@ -1,4 +1,4 @@
-# *IFC*: Infinite-Fidelity Coregionalization for Physical Simulation
+# *A-MAML*: Meta-Learning with Adjoint Methods
 
 by [Shibo Li](https://imshibo.com), Wang Zheng, [Akil Narayan](http://www.sci.utah.edu/~akil/), [Mike Kirby](https://www.cs.utah.edu/~kirby/) and [Shandian Zhe](https://www.cs.utah.edu/~zhe/)
 
