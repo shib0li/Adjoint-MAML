@@ -31,13 +31,22 @@ We highly recommend to use Docker to run our code. We have attached the docker b
 
 To run 
 
-```bash experiment.sh $DOMAIN $k_SHOT $ $k_QUERY $INNER_STEPS $DEIVCE ```
+```
+bash experiment.sh $DOMAIN $k_SHOT $k_QUERY $INNER_STEPS $DEIVCE 
+```
 
 * `$DOMAIN` name of problem
 * `$k_SHOT` number of shots
 * `$k_QUERY` number of support
 * `$INNER_STEPS` SGD steps in the inner loop
 * `$DEVICE` where to run, for example ***cuda:0*** or ***cpu***
+
+For example
+
+```
+bash experiment.sh Alpine2D 100 100 200 cuda:0 
+```
+will get the results of meta regression on family of Alpine functions with 100 shots and 100 query, each meta step will run 200 SGD steps.
 
 
 # License
